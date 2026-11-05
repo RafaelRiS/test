@@ -68,7 +68,7 @@ ftp 192.168.56.101
 | `192.168.56.101` | Endereço IP do Metasploitable 2.                   |
 
 Se a resposta for "Connected to 192.168.56.101 220" então significa realmente que está aberta e que está aceitando conexão.
-![[Resposta ftp.png]]
+![[Imagens/Resposta ftp.png]]
 
 Pronto, agora sabemos que o serviço está realmente ativo, está aberta a porta e que está vulnerável e conseguimos saber que podemos começar diretamente com o FTP (Meduza), porém, não sabemos qual é o login e nem a senha.
 
@@ -153,17 +153,17 @@ O Cenário que vamos simular é através do dam vunerable web que é o DVWA, que
 
 E esse sistema (DVWA) é interessante porque ele vai apresentar para a gente um formulário web normal que nem a gente vê no dia a dia, onde o usuário vai digitar o login a senha e vai clicar em login, porém nosso objetivo será entender como esse formulário se comporta tecnicamente por trás do navegador (Se o desenvolvedor esqueceu alguma dica, deixou alguma brecha/ vulnerabilidade por trás desse formulário) e vamos também automatizar as tentativas de login utilizando a ferramenta MEDUZA que vai simular essas interações, vamos descobrir se alguma das credenciais que a gente vai utilizar são fracas, se o sistema possui algumas credenciais fracas que nós vamos passar e se elas vão ser aceitas e vamos analisar o que isso significa para evitar que aconteça em aplicações reais que nós estejamos gerenciando.
 
-![[Metasploitable2 HTTP.png]]
+![[Imagens/Metasploitable2 HTTP.png]]
 
-![[DVWA.png]]
+![[Imagens/DVWA.png]]
 
 E abrimos o INSPECIONAR (A parte do desenvolvedor, e vamos abrir na abinha 'Network') e aqui a gente consegue ver tudo que o navegador está enviando e recebendo durante a interação com o Servidor/ backend:
 
-![[Inspecionar do DVWA.png]]
+![[Imagens/Inspecionar do DVWA.png]]
 
 Clicamos na requisição POST e na abinha 'Request' onde podemos ver quais os nomes dos parâmetros que o Backend espera receber:
 
-![[DVWA Parametros de requisicao.png]]
+![[Imagens/DVWA Parametros de requisicao.png]]
 
 e é o formato que vamos usar no MEDUSA e a mensagem de erro nesse caso 'Login failed' é a frase que o MEDUSA vai usar como indicador de falhas. Ou seja, se a resposta não contiver essa frase, o MEDUSA vai entender que o login foi bem sucedido.
 
@@ -338,7 +338,7 @@ Esse processo é chamado de enumeração, uma etapa importante do reconhecimento
 
 E o que obtemos através dessa execução desse código é varias informações de texto mas o que nos interessa é essa parte:
 
-![[Rid.png]]
+![[Imagens/Rid.png]]
 
 Os nomes de users!
 
@@ -421,6 +421,6 @@ smbclient -L //192.168.56.101 -U msfadmin
 | `-U msfadmin`      | Informa o usuário utilizado na autenticação.        |
 
 
-![[SMB Access.png]]
+![[Imagens/SMB Access.png]]
 
 Prontinho, tivemos acesso.
