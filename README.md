@@ -420,8 +420,6 @@ smbclient -L //192.168.56.101 -U msfadmin
 | `//192.168.56.101` | Endereço IP do servidor SMB.                        |
 | `-U msfadmin`      | Informa o usuário utilizado na autenticação.        |
 
-
-![[Imagens/SMB Access.png]]
 ![SMB Access](./Imagens/SMB%20Access.png)
 
 Prontinho, tivemos acesso.
