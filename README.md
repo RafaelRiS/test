@@ -53,7 +53,7 @@ E quando rodamos esse comando, e o scan termina, o nmap retorna para nós uma sa
 
 Se a porta 21 aparecer como aberta por exemplo, a gente vai saber que o FTP está Habilitado e está rodando em uma versão antiga por ser Vulnerável.
 
-![Comando nmap](Imagens/Comando2%20nmap.png)
+![Comando nmap](./Imagens/Comando2%20nmap.png)
 
 E para saber por exemplo se realmente a porta 21 (FTP) está aberta podemos usar o seguinte comando:
 
